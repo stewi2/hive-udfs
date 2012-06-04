@@ -1,4 +1,4 @@
-package com.zendesk.hive.udf;
+package stewi;
 
 import java.io.BufferedReader;
 import java.io.IOException;
