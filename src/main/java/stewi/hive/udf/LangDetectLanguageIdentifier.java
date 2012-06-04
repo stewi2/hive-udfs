@@ -1,4 +1,4 @@
-package stewi;
+package stewi.hive.udf;
 
 import java.io.BufferedReader;
 import java.io.IOException;

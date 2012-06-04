@@ -1,4 +1,4 @@
-package stewi;
+package stewi.hive.udf;
 
 import java.util.regex.Pattern;
 
