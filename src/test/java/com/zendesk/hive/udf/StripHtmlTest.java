@@ -5,6 +5,8 @@ import static org.junit.Assert.*;
 import org.apache.hadoop.io.Text;
 import org.junit.Test;
 
+import stewi.hive.udf.StripHtml;
+
 public class StripHtmlTest {
 	@Test
 	public void test() {

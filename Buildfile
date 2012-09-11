@@ -11,6 +11,7 @@ define "hive-udfs" do
 	'org.apache.tika:tika-core:jar:1.0',
 	'org.apache.commons:commons-io:jar:1.3.2',
 	'commons-logging:commons-logging:jar:1.0.3',
+	'commons-codec:commons-codec:jar:1.6',
 	'org.jsoup:jsoup:jar:1.6.1',
 	_('lib/langdetect.jar'),
 	_('lib/jsonic-1.2.0.jar')
