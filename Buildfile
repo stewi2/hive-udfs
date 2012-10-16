@@ -6,7 +6,7 @@ repositories.remote << 'http://lresearch.net/maven2'
 desc "Hive UDFs"
 define "hive-udfs" do
     
-  project.version = "0.3"
+  project.version = "0.4"
   compile.options.target = '1.6'
   deps = 'org.apache.hadoop.hive:hive-exec:jar:0.7.1-cdh3u3',
 	'org.apache.hadoop:hadoop-core:jar:0.20.2-cdh3u3',
