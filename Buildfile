@@ -8,9 +8,11 @@ define "hive-udfs" do
     
   project.version = "0.5"
   compile.options.target = '1.6'
-  deps = 'org.apache.hadoop.hive:hive-exec:jar:0.7.1-cdh3u3',
-	'org.apache.hadoop:hadoop-core:jar:0.20.2-cdh3u3',
-	'org.apache.tika:tika-core:jar:1.0',
+
+  HADOOP = ['org.apache.hadoop.hive:hive-exec:jar:0.7.1-cdh3u3',
+	    'org.apache.hadoop:hadoop-core:jar:0.20.2-cdh3u3']
+
+  RUNTIME = ['org.apache.tika:tika-core:jar:1.0',
 	'org.apache.commons:commons-io:jar:1.3.2',
 	'org.apache.lucene:lucene-analyzers:jar:3.6.1',
 	'commons-logging:commons-logging:jar:1.0.3',
@@ -18,16 +20,11 @@ define "hive-udfs" do
 	'org.jsoup:jsoup:jar:1.6.1',
 	'nl.bitwalker:UserAgentUtils:jar:1.6',
 	_('lib/langdetect.jar'),
-	_('lib/jsonic-1.2.0.jar')
+	_('lib/jsonic-1.2.0.jar')]
 
   download(artifact('nl.bitwalker:UserAgentUtils:jar:1.6')=>'http://java.net/projects/user-agent-utils/downloads/download/UserAgentUtils-1.6.jar')
 
-  compile.with deps
-  package :jar
-
-  package(:tgz, :id => "#{name}-dist").path("#{name}-#{project.version}").tap do |distro|
-    distro.path("lib").include artifacts(compile.dependencies)
-    distro.path("lib").include package(:jar)
-  end
+  compile.with HADOOP,RUNTIME
+  package(:jar).merge(RUNTIME)
 
 end
