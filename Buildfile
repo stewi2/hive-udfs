@@ -6,7 +6,7 @@ repositories.remote << 'http://lresearch.net/maven2'
 desc "Hive UDFs"
 define "hive-udfs" do
     
-  project.version = "0.4"
+  project.version = "0.5"
   compile.options.target = '1.6'
   deps = 'org.apache.hadoop.hive:hive-exec:jar:0.7.1-cdh3u3',
 	'org.apache.hadoop:hadoop-core:jar:0.20.2-cdh3u3',
@@ -16,8 +16,11 @@ define "hive-udfs" do
 	'commons-logging:commons-logging:jar:1.0.3',
 	'commons-codec:commons-codec:jar:1.6',
 	'org.jsoup:jsoup:jar:1.6.1',
+	'nl.bitwalker:UserAgentUtils:jar:1.6',
 	_('lib/langdetect.jar'),
 	_('lib/jsonic-1.2.0.jar')
+
+  download(artifact('nl.bitwalker:UserAgentUtils:jar:1.6')=>'http://java.net/projects/user-agent-utils/downloads/download/UserAgentUtils-1.6.jar')
 
   compile.with deps
   package :jar
