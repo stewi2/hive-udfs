@@ -1,8 +1,13 @@
 Some random Hive UDFs
 
-## Building
+## Build Option 1
 
-1. Either install Apache Buildr manually via http://buildr.apache.org/installing.html
-2. Or use `bundle install` via the supplied Gemfile
-3. Build: `bundle exec buildr package` if using Bundler, or simply `buildr package` if you installed Buildr separately.
+1. Install Apache Buildr manually via http://buildr.apache.org/installing.html
+2. `buildr package`
+
+## Build Option 2
+
+1. Set JAVA\_HOME=... (where your JDK is installed, on Ubuntu that's /usr/lib/jvm/java-6-sun)
+2. `bundle install --local`
+3. `bundle exec buildr package`
 
