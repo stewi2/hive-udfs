@@ -27,6 +27,12 @@ public class ParseUserAgentTest {
 		assertEquals("8.0", output.get("browser.version"));
 		assertEquals("Internet Explorer 8", output.get("browser.name"));
 		assertEquals("Microsoft Corporation", output.get("browser.manufacturer"));
+		
+		try {
+			udf.evaluate(new Text("-"));
+		} catch(Exception e) {
+			fail("Invalid input caused unexpected exception");
+		}
 	}
 
 }

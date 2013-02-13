@@ -34,9 +34,13 @@ public class ParseUserAgent extends UDF {
 		result.put("browser.manufacturer", ua.getBrowser().getManufacturer().getName());
 		result.put("browser.type", ua.getBrowser().getBrowserType().getName());
 		result.put("browser.engine", ua.getBrowser().getRenderingEngine().toString());
-		result.put("browser.version", ua.getBrowserVersion().getVersion());
-		result.put("browser.majorversion", ua.getBrowserVersion().getMajorVersion());
-		result.put("browser.minorversion", ua.getBrowserVersion().getMinorVersion());
+		
+		if(ua.getBrowserVersion()!=null) {
+			result.put("browser.version", ua.getBrowserVersion().getVersion());
+			result.put("browser.majorversion", ua.getBrowserVersion().getMajorVersion());
+			result.put("browser.minorversion", ua.getBrowserVersion().getMinorVersion());
+		}
+		
 		result.put("browser.name", ua.getBrowser().getName());
 
 		return result;
