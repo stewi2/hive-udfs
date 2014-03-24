@@ -1,6 +1,6 @@
-repositories.remote << 'http://repository.cloudera.com/artifactory/cloudera-repos/'
+repositories.remote << 'http://repository.cloudera.com/artifactory/cloudera-repos'
 repositories.remote << 'http://repo1.maven.org/maven2'
-repositories.remote << 'http://repository.sourcesense.com/nexus/content/repositories/public/'
+repositories.remote << 'http://repository.sourcesense.com/nexus/content/repositories/public'
 repositories.remote << 'http://lresearch.net/maven2'
 
 desc "Hive UDFs"
@@ -9,8 +9,8 @@ define "hive-udfs" do
   project.version = "1.0.2"
   compile.options.target = '1.6'
 
-  HADOOP = ['org.apache.hadoop.hive:hive-exec:jar:0.7.1-cdh3u3',
-	    'org.apache.hadoop:hadoop-core:jar:0.20.2-cdh3u3']
+  HADOOP = ['org.apache.hive:hive-exec:jar:0.10.0-cdh4.6.0',
+	    'org.apache.hadoop:hadoop-common:jar:2.0.0-cdh4.6.0']
 
   RUNTIME = ['org.apache.tika:tika-core:jar:1.0',
 	'org.apache.commons:commons-io:jar:1.3.2',
