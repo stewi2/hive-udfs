@@ -1,6 +1,7 @@
 repositories.remote << 'http://repository.cloudera.com/artifactory/cloudera-repos'
 repositories.remote << 'http://repo1.maven.org/maven2'
 repositories.remote << 'http://lresearch.net/maven2'
+repositories.remote << 'https://raw.githubusercontent.com/HaraldWalker/user-agent-utils/mvn-repo'
 
 desc "Hive UDFs"
 define "hive-udfs" do
@@ -18,11 +19,9 @@ define "hive-udfs" do
 	'commons-logging:commons-logging:jar:1.0.3',
 	'commons-codec:commons-codec:jar:1.6',
 	'org.jsoup:jsoup:jar:1.6.1',
-	'nl.bitwalker:UserAgentUtils:jar:1.6',
+	'bitwalker:UserAgentUtils:jar:1.13',
 	_('lib/langdetect.jar'),
 	_('lib/jsonic-1.2.0.jar')]
-
-  download(artifact('nl.bitwalker:UserAgentUtils:jar:1.6')=>'http://java.net/projects/user-agent-utils/downloads/download/UserAgentUtils-1.6.jar')
 
   compile.with HADOOP,RUNTIME
   package(:jar).merge(RUNTIME)

@@ -3,10 +3,10 @@ package stewi.hive.udf;
 import java.util.HashMap;
 import java.util.Map;
 
-import nl.bitwalker.useragentutils.Browser;
-import nl.bitwalker.useragentutils.OperatingSystem;
-import nl.bitwalker.useragentutils.UserAgent;
-import nl.bitwalker.useragentutils.Version;
+import eu.bitwalker.useragentutils.Browser;
+import eu.bitwalker.useragentutils.OperatingSystem;
+import eu.bitwalker.useragentutils.UserAgent;
+import eu.bitwalker.useragentutils.Version;
 
 import org.apache.hadoop.hive.ql.exec.UDF;
 import org.apache.hadoop.io.Text;
