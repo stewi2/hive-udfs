@@ -7,6 +7,6 @@ import org.apache.hadoop.io.Text;
 public class Base64Decode extends UDF {
 	public Text evaluate(Text input) {
 		if(input==null) return null;
-		return new Text(Base64.decodeBase64(input.toString()));
+		return new Text(Base64.decodeBase64(input.getBytes()));
 	}
 }
